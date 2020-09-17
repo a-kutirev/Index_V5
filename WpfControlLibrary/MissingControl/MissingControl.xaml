@@ -1,0 +1,52 @@
+﻿<UserControl x:Class="WpfControlLibrary.MissingControl.MissingControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WpfControlLibrary.MissingControl"
+             Margin="10, 10, 10, 0"
+             mc:Ignorable="d" d:DesignHeight="90" d:DesignWidth="300">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="..\Resource\_Label.xaml"/>
+                <ResourceDictionary Source="..\Resource\_ComboBox.xaml"/>
+                <ResourceDictionary Source="..\Resource\_TextBox.xaml"/>
+                <ResourceDictionary Source="..\Resource\_Button.xaml"/>
+                <ResourceDictionary Source="..\Resource\_RichTextBox.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Border CornerRadius="5" Background="LightGray">
+        <Border.Effect>
+            <DropShadowEffect ShadowDepth="2" Color="Gray"/>
+        </Border.Effect>
+        <Grid Name="MainGrid">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="30*"/>
+                <ColumnDefinition Width="19*"/>
+                <ColumnDefinition Width="25"/>
+                <ColumnDefinition Width="30"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Label Template="{StaticResource LabelTmpl}" Grid.ColumnSpan="2" Margin="5,5,0,0"
+                   HorizontalContentAlignment="Center" Content="{Binding Fullname}"/>
+            <Button Grid.Column="3" Margin="0,5,5,0" Name="DeleteBt" Click="DeleteBt_Click">
+                <Image Source="..\Resource\redcross.png"/>
+            </Button>
+            <Button Grid.Column="2" Margin="0,5,0,0" Name="EditBt" Click="EditBt_Click">
+                <Image Source="..\Resource\pen.png"/>
+            </Button>
+            <Label Template="{StaticResource LabelTmpl}" Grid.Row="1" Margin="5,0,2,0"
+                   HorizontalContentAlignment="Center" Content="{Binding Begin}"/>
+            <Label Template="{StaticResource LabelTmpl}" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3" Margin="3,0,5,0"
+                   HorizontalContentAlignment="Center" Content="{Binding End}"/>
+            <Label Template="{StaticResource LabelTmpl}" Grid.ColumnSpan="4" Margin="5,0,5,5" Grid.Row="2"
+                   HorizontalContentAlignment="Center" Content="{Binding Model.Missingcomment}" Name="ReasonTB"/>
+        </Grid>
+    </Border>
+</UserControl>

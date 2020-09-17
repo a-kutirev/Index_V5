@@ -1,0 +1,582 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C96F76A1-90C3-4658-93A1-F87D536F93FF}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Tours_V5</RootNamespace>
+    <AssemblyName>Tours_V5</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>g:\tours5\</PublishUrl>
+    <Install>false</Install>
+    <InstallFrom>Unc</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <InstallUrl>\\corei5\xampp\</InstallUrl>
+    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\Build\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\Build\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>5441609E4F55B49102F3510E1622E643ADA0430B</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>
+    </ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.3.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>..\packages\BouncyCastle.1.8.3.1\lib\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="ControlzEx, Version=4.0.0.0, Culture=neutral, PublicKeyToken=69f1c32f803d307e, processorArchitecture=MSIL">
+      <HintPath>..\packages\ControlzEx.4.1.1\lib\net45\ControlzEx.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Protobuf, Version=3.6.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Protobuf.3.6.1\lib\net45\Google.Protobuf.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Xaml.Behaviors, Version=1.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Xaml.Behaviors.Wpf.1.1.3\lib\net45\Microsoft.Xaml.Behaviors.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=8.0.18.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.8.0.18\lib\net452\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Renci.SshNet, Version=2016.1.0.0, Culture=neutral, PublicKeyToken=1cee9f8bde3db106, processorArchitecture=MSIL">
+      <HintPath>..\packages\SSH.NET.2016.1.0\lib\net40\Renci.SshNet.dll</HintPath>
+    </Reference>
+    <Reference Include="RibbonControlsLibrary, Version=4.0.0.11019, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\RibbonControlsLibrary.4.0.0\lib\net40\RibbonControlsLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="UIAutomationTypes" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="AddContactWindow.xaml.cs">
+      <DependentUpon>AddContactWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AddEventContactWindow.xaml.cs">
+      <DependentUpon>AddEventContactWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AddEventWindow.xaml.cs">
+      <DependentUpon>AddEventWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AddGroupWindow.xaml.cs">
+      <DependentUpon>AddGroupWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AddMissingWindow.xaml.cs">
+      <DependentUpon>AddMissingWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AddNoteWindow.xaml.cs">
+      <DependentUpon>AddNoteWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AuthWindow\AdminWindow.xaml.cs">
+      <DependentUpon>AdminWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AuthWindow\AuthWindow.xaml.cs">
+      <DependentUpon>AuthWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AuthWindow\EditUserWindow.xaml.cs">
+      <DependentUpon>EditUserWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CalendarWindow.xaml.cs">
+      <DependentUpon>CalendarWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DayOptionWindow.xaml.cs">
+      <DependentUpon>DayOptionWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EventCompleteWindow.xaml.cs">
+      <DependentUpon>EventCompleteWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EventDeleteWindow.xaml.cs">
+      <DependentUpon>EventDeleteWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GroupCompleteWindow.xaml.cs">
+      <DependentUpon>GroupCompleteWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GroupDeleteWindow.xaml.cs">
+      <DependentUpon>GroupDeleteWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GroupEditWIndow_Main.xaml.cs">
+      <DependentUpon>GroupEditWIndow_Main.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="OldStyle\SelectAddWindow.xaml.cs">
+      <DependentUpon>SelectAddWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="OldStyle\SelectModifiedWindow.xaml.cs">
+      <DependentUpon>SelectModifiedWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="OldStyle\SelectReportWindow.xaml.cs">
+      <DependentUpon>SelectReportWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RefBook\AutocompleteNewEdit.xaml.cs">
+      <DependentUpon>AutocompleteNewEdit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RefBook\AutocompleteTable.xaml.cs">
+      <DependentUpon>AutocompleteTable.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RefBook\ContactTable.xaml.cs">
+      <DependentUpon>ContactTable.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RefBook\EventEditWindow.xaml.cs">
+      <DependentUpon>EventEditWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RefBook\EventModifyWindow.xaml.cs">
+      <DependentUpon>EventModifyWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RefBook\EventNewEditWindow.xaml.cs">
+      <DependentUpon>EventNewEditWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RefBook\EventTable.xaml.cs">
+      <DependentUpon>EventTable.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RefBook\FloorNewEdit.xaml.cs">
+      <DependentUpon>FloorNewEdit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RefBook\FloorTable.xaml.cs">
+      <DependentUpon>FloorTable.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RefBook\GroupEditWindow.xaml.cs">
+      <DependentUpon>GroupEditWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RefBook\GroupModifyWindow.xaml.cs">
+      <DependentUpon>GroupModifyWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RefBook\GuidNewEdit.xaml.cs">
+      <DependentUpon>GuidNewEdit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RefBook\GuidTable.xaml.cs">
+      <DependentUpon>GuidTable.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RefBook\MissingEdit.xaml.cs">
+      <DependentUpon>MissingEdit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RefBook\MissingTable.xaml.cs">
+      <DependentUpon>MissingTable.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RefBook\NoteTable.xaml.cs">
+      <DependentUpon>NoteTable.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RefBook\PostNewEdit.xaml.cs">
+      <DependentUpon>PostNewEdit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RefBook\PostTable.xaml.cs">
+      <DependentUpon>PostTable.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RefBook\TourNewEdit.xaml.cs">
+      <DependentUpon>TourNewEdit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RefBook\TourTable.xaml.cs">
+      <DependentUpon>TourTable.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RefBook\ZoneNewEdit.xaml.cs">
+      <DependentUpon>ZoneNewEdit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RefBook\ZoneTable.xaml.cs">
+      <DependentUpon>ZoneTable.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SearchContactByOrganizationWindow.xaml.cs">
+      <DependentUpon>SearchContactByOrganizationWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SearchGroupByOrganizationWindow.xaml.cs">
+      <DependentUpon>SearchGroupByOrganizationWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SelectContactWindow.xaml.cs">
+      <DependentUpon>SelectContactWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SelectEventMasters.xaml.cs">
+      <DependentUpon>SelectEventMasters.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SelectEventWindow.xaml.cs">
+      <DependentUpon>SelectEventWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Select_Org_Geo.xaml.cs">
+      <DependentUpon>Select_Org_Geo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Setup\NetOptionsWindow.xaml.cs">
+      <DependentUpon>NetOptionsWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SummaryTableWindow.xaml.cs">
+      <DependentUpon>SummaryTableWindow.xaml</DependentUpon>
+    </Compile>
+    <Page Include="AddContactWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AddEventContactWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AddEventWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AddGroupWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AddMissingWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AddNoteWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AuthWindow\AdminWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AuthWindow\AuthWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AuthWindow\EditUserWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CalendarWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DayOptionWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EventCompleteWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EventDeleteWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GroupCompleteWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GroupDeleteWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GroupEditWIndow_Main.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="OldStyle\SelectAddWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="OldStyle\SelectModifiedWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="OldStyle\SelectReportWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RefBook\AutocompleteNewEdit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RefBook\AutocompleteTable.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RefBook\ContactTable.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RefBook\EventEditWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RefBook\EventModifyWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RefBook\EventNewEditWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RefBook\EventTable.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RefBook\FloorNewEdit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RefBook\FloorTable.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RefBook\GroupEditWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RefBook\GroupModifyWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RefBook\GuidNewEdit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RefBook\GuidTable.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RefBook\MissingEdit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RefBook\MissingTable.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RefBook\NoteTable.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RefBook\PostNewEdit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RefBook\PostTable.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RefBook\TourNewEdit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RefBook\TourTable.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RefBook\ZoneNewEdit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RefBook\ZoneTable.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SearchContactByOrganizationWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SearchGroupByOrganizationWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SelectContactWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SelectEventMasters.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SelectEventWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Select_Org_Geo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Setup\NetOptionsWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SummaryTableWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Tours_V5_1_TemporaryKey.pfx" />
+    <None Include="Tours_V5_TemporaryKey.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ClassLibrary\ClassLibrary.csproj">
+      <Project>{B380D159-679E-465F-B074-ED220D47BE02}</Project>
+      <Name>ClassLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DBWrapper\DBWrapper.csproj">
+      <Project>{D6D08E79-0C2D-4AF9-9183-924D44981629}</Project>
+      <Name>DBWrapper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LogLibrary\LogLibrary.csproj">
+      <Project>{A4280B12-6662-4C61-A62D-74DBA5418F85}</Project>
+      <Name>LogLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ReportLib\ReportLib.csproj">
+      <Project>{7FAE4B19-8BAF-4D4B-B595-326B0E5D7E05}</Project>
+      <Name>ReportLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UtilsLib\UtilsStatLib.csproj">
+      <Project>{CA988F88-B832-4A04-B795-27CB67C2C396}</Project>
+      <Name>UtilsStatLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WpfControlLibrary\WpfControlLibrary.csproj">
+      <Project>{645F892F-94EB-44C0-8359-84E9E3ABD705}</Project>
+      <Name>WpfControlLibrary</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Options.png" />
+    <Resource Include="Images\Print.png" />
+    <Resource Include="Images\Document.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Table.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Calendar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\addgroup.png" />
+    <Resource Include="Images\printer.png" />
+    <Resource Include="Images\stat.png" />
+    <Resource Include="Images\Update.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\calendar1.png" />
+    <Resource Include="Images\table1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\brick.jpg" />
+    <Resource Include="Images\warning.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 и x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\brick.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\regroup.png" />
+    <Resource Include="Images\SQL.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\search.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

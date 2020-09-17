@@ -1,0 +1,69 @@
+﻿<Window x:Class="Tours_V5.OldStyle.SelectReportWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Tours_V5.OldStyle"
+        ResizeMode="NoResize" WindowStartupLocation="CenterScreen"
+        mc:Ignorable="d" Height="319" Width="500">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/WPFControlLibrary;component\Resource\_Button.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Grid Background="AliceBlue">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <GroupBox Margin="5" Header="Отчеты за день" HorizontalAlignment="Center">
+            <StackPanel Orientation="Horizontal">
+                <Button Width="60" Height="50" Margin="5" Click="OldReportButton_Click" Name="DayRepTime">
+                    <TextBlock TextWrapping="Wrap" Text="По времени"/>
+                </Button>
+                <Button Width="60" Height="50" Margin="5" Click="OldReportButton_Click" Name="DayRepFloor">
+                    <TextBlock TextWrapping="Wrap" Text="По этажам"/>
+                </Button>
+                <Button Width="60" Height="50" Margin="5" Click="OldReportButton_Click"  Name="DayRepFull">
+                    <TextBlock TextWrapping="Wrap" Text="Полный за день"/>
+                </Button>
+            </StackPanel>
+        </GroupBox>
+
+        <GroupBox Margin="5" Header="Отчеты за период" HorizontalAlignment="Center" Grid.Column="1">
+            <StackPanel Orientation="Horizontal">
+                <Button Width="60" Height="50" Margin="5" Click="OldReportButton_Click" Name="PriodRepMonth">
+                    <TextBlock TextWrapping="Wrap" Text="За месяц"/>
+                </Button>
+                <Button Width="60" Height="50" Margin="5" Click="OldReportButton_Click" Name="PriodRepQart">
+                    <TextBlock TextWrapping="Wrap" Text="За квартал"/>
+                </Button>
+                <Button Width="60" Height="50" Margin="5" Click="OldReportButton_Click" Name="PriodRepPeriod">
+                    <TextBlock TextWrapping="Wrap" Text="За период"/>
+                </Button>
+            </StackPanel>
+        </GroupBox>
+
+        <GroupBox Margin="5" Header="Другие отчеты" HorizontalAlignment="Center" Grid.Row="1">
+            <StackPanel Orientation="Horizontal">
+                <Button Width="60" Height="50" Margin="5" Click="OldReportButton_Click" Name="RepListGroup">
+                    <TextBlock TextWrapping="Wrap" Text="Список групп"/>
+                </Button>
+                <Button Width="60" Height="50" Margin="5" Click="StatReport_Click" Name="StatReport">
+                    <TextBlock TextWrapping="Wrap" Text="Статис-тика"/>
+                </Button>
+                <Button Width="60" Height="50" Margin="5" Click="OldReportButton_Click">
+                    <TextBlock TextWrapping="Wrap" Text=""/>
+                </Button>
+            </StackPanel>
+        </GroupBox>
+    </Grid>
+</Window>

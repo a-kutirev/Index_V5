@@ -1,0 +1,232 @@
+﻿<Window x:Class="Tours_V5.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Tours_V5"
+        xmlns:ribbon="http://schemas.microsoft.com/winfx/2006/xaml/presentation/ribbon"
+        mc:Ignorable="d" WindowState="Maximized" Loaded="Window_Loaded"
+        Title="ИНДЭКС" Height="1080" Width="1920">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/WPFControlLibrary;component\Resource\_Button.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/WPFControlLibrary;component\Resource\_TreeView.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+            <BooleanToVisibilityConverter x:Key="Bool2Vis"/>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Grid Background="AliceBlue">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="140"/>
+            <ColumnDefinition Width="350"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition/>
+            <RowDefinition Height="30"/>
+        </Grid.RowDefinitions>
+
+        <!--#region Status bar-->
+
+        <StatusBar Grid.Row="2" Grid.ColumnSpan="3">
+            <StatusBar.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="LightBlue" Offset="1"/>
+                    <GradientStop Color="White"/>
+                </LinearGradientBrush>
+            </StatusBar.Background>
+            <CheckBox Content="Использовать старый интерфейс" Margin="20,0,20,0" IsChecked="{Binding Path=UseOldInterface, Mode=TwoWay}"/>
+            <Separator/>
+            <Label Content="Версия - хх.хххх" Name="VersionLabel"/>
+        </StatusBar>
+
+        <!--#endregion-->
+
+        <!--#region Главное меню новый интерфейс-->
+        <ribbon:Ribbon Visibility="Visible" x:Name="NewInterface">
+            <ribbon:Ribbon.ApplicationMenu>
+                <ribbon:RibbonApplicationMenu Visibility="Collapsed"/>
+            </ribbon:Ribbon.ApplicationMenu>
+            <ribbon:RibbonTab Header="Главная">
+                <ribbon:RibbonGroup Header="Добавить">
+                    <ribbon:RibbonButton x:Name="AddGroup"    LargeImageSource="Images\Document.png" Label="Экскурсия" Width="100" Click="AddGroup_Click"/>
+                    <ribbon:RibbonButton x:Name="AddEvent"    LargeImageSource="Images\Document.png" Label="Мероприятие" Width="100" Click="AddEvent_Click"/>
+                    <ribbon:RibbonButton x:Name="AddNote"     LargeImageSource="Images\Document.png" Label="Заметка" Width="100" Click="AddNote_Click"/>
+                    <ribbon:RibbonButton x:Name="AddMissing"  LargeImageSource="Images\Document.png" Label="Отсутствующий" Width="100" Click="AddMissing_Click"/>
+                </ribbon:RibbonGroup>
+                <ribbon:RibbonGroup Header="Информация">
+                    <ribbon:RibbonButton x:Name="Calendar"    LargeImageSource="Images\Calendar.png" Label="Календарь" Width="100" Click="Calendar_Click"/>
+                    <ribbon:RibbonButton x:Name="Svodka"    LargeImageSource="Images\Table.png" Label="Сводка" Width="100" Click="Svodka_Click"/>
+                    <Label Content="{Binding Path=TitleString}" VerticalContentAlignment ="Center"  FontSize="32" FontWeight="Bold" Width="700" Height="53"/>
+                </ribbon:RibbonGroup>
+            </ribbon:RibbonTab>
+            <ribbon:RibbonTab Header="Печать">
+                <ribbon:RibbonGroup Header="Экскурсии">
+                    <ribbon:RibbonButton x:Name="RepByTime"   LargeImageSource="Images\Print.png" Label="По времени" Width="100" Click="RepDay_Click"/>
+                    <ribbon:RibbonButton x:Name="RepByFloor"  LargeImageSource="Images\Print.png" Label="По этажам" Width="100" Click="RepDay_Click"/>
+                    <ribbon:RibbonButton x:Name="RepFullDay"  LargeImageSource="Images\Print.png" Label="Полный за день" Width="100" Click="RepFullDay_Click"/>
+                </ribbon:RibbonGroup>
+                <ribbon:RibbonGroup Header="Отчеты">
+                    <ribbon:RibbonButton x:Name="RepByMonth"  LargeImageSource="Images\Print.png" Label="Месяц" Width="100" Click="RepPeriod_Click"/>
+                    <ribbon:RibbonButton x:Name="RepByQuart"  LargeImageSource="Images\Print.png" Label="Квартал" Width="100" Click="RepPeriod_Click"/>
+                    <ribbon:RibbonButton x:Name="RepByPeriod" LargeImageSource="Images\Print.png" Label="Период" Width="100" Click="RepPeriod_Click"/>
+                </ribbon:RibbonGroup>
+                <ribbon:RibbonGroup>
+                    <ribbon:RibbonButton x:Name="ListGrp"   LargeImageSource="Images\Print.png" Label="Список групп" Width="100" Click="ListGrp_Click"/>
+                </ribbon:RibbonGroup>
+                <ribbon:RibbonGroup Header="Статистика">
+                    <ribbon:RibbonButton x:Name="StatWiz"   LargeImageSource="Images\Print.png" Label="Мастер статистики" Width="100" Click="StatWiz_Click"/>
+                </ribbon:RibbonGroup>
+            </ribbon:RibbonTab>
+            <ribbon:RibbonTab Header="Справочники">
+                <ribbon:RibbonGroup Header="Основные">
+                    <ribbon:RibbonButton x:Name="DirectoryExpo"  LargeImageSource="Images\Table.png" Label="Экскурсии" Width="100" Click="Directory_Click"/>
+                    <ribbon:RibbonButton x:Name="DirectoryEvent"  LargeImageSource="Images\Table.png" Label="Мероприятия" Width="100" Click="Directory_Click"/>
+                    <ribbon:RibbonButton x:Name="DirectoryGuid"  LargeImageSource="Images\Table.png" Label="Сотрудники" Width="100" Click="Directory_Click"/>
+                    <ribbon:RibbonButton x:Name="DirectoryMissing"  LargeImageSource="Images\Table.png" Label="Отсутствующие" Width="100" Click="Directory_Click"/>
+                    <ribbon:RibbonButton x:Name="DirectoryContact"  LargeImageSource="Images\Table.png" Label="Контакты" Width="100" Click="Directory_Click"/>
+                    <ribbon:RibbonButton x:Name="DirectoryNote"  LargeImageSource="Images\Table.png" Label="Заметки" Width="100" Click="Directory_Click"/>
+                </ribbon:RibbonGroup>
+                <ribbon:RibbonGroup Header="Вспомогательные">
+                    <ribbon:RibbonButton x:Name="DirectoryPost"  LargeImageSource="Images\Table.png" Label="Должности" Width="100" Click="Directory_Click"/>
+                    <ribbon:RibbonButton x:Name="DirectoryZones"  LargeImageSource="Images\Table.png" Label="Места проведения" Width="100" Click="Directory_Click"/>
+                    <ribbon:RibbonButton x:Name="DirectoryFloor"  LargeImageSource="Images\Table.png" Label="Этажность" Width="100" Click="Directory_Click"/>
+                    <ribbon:RibbonButton x:Name="DirectoryAutocomplete"  LargeImageSource="Images\Table.png" Label="Автозаполнение" Width="100" Click="Directory_Click"/>
+                </ribbon:RibbonGroup>
+            </ribbon:RibbonTab>
+            <ribbon:RibbonTab Header="Дополнительно">
+                <ribbon:RibbonGroup Header="Редактирование">
+                    <ribbon:RibbonButton x:Name="GroupEditBt"  LargeImageSource="Images\Table.png" Label="Группа" Width="100" Click="DirectoryGroup_Click"/>
+                    <ribbon:RibbonButton x:Name="EventEditBt"  LargeImageSource="Images\Table.png" Label="Мероприятие" Width="100" Click="EventEditBt_Click"/>
+                </ribbon:RibbonGroup>
+                <ribbon:RibbonGroup Header="Дополнительные функции">
+                    <ribbon:RibbonButton x:Name="RegroupBt"  LargeImageSource="Images\regroup.png" Label="Регруппировка" Width="100" Click="Utils_Click"/>
+                    <ribbon:RibbonButton x:Name="SearchContactBt"  LargeImageSource="Images\search.png" Label="Поиск контактов" Width="100" Click="SearchContactBt_Click"/>
+                    <ribbon:RibbonButton x:Name="SearchGroupBt"  LargeImageSource="Images\search.png" Label="Поиск групп" Width="100" Click="SearchGroupBt_Click"/>
+                    <ribbon:RibbonButton x:Name="SqlBt"  LargeImageSource="Images\SQL.png" Label="SQL..." Width="100" Click="Utils_Click"/>
+                </ribbon:RibbonGroup>
+            </ribbon:RibbonTab>
+            <ribbon:RibbonTab Header="Настройки">
+                <ribbon:RibbonGroup Header="Отображение">
+                    <ribbon:RibbonCheckBox Label="Не отображать отмененные" IsChecked="{Binding Path=ShowDeleted, Mode=TwoWay}"/>
+                    <ribbon:RibbonCheckBox Label="Не отображать завершенные" IsChecked="{Binding Path=ShowCompleted, Mode=TwoWay}"/>
+                    <ribbon:RibbonCheckBox Label="Не отображать пустые комментарии" IsChecked="{Binding Path=ShowEmptyComments, Mode=TwoWay}"/>
+                </ribbon:RibbonGroup>
+                <ribbon:RibbonGroup Header="Сеть и пользователь">
+                    <ribbon:RibbonButton x:Name="NetOptions"  LargeImageSource="Images\Options.png" Label="Сетевые настройки" Width="100"/>
+                    <ribbon:RibbonButton x:Name="UserPass"  LargeImageSource="Images\Options.png" Label="Пароль пользователя" Width="100"/>
+                    <ribbon:RibbonButton x:Name="UserName"  LargeImageSource="Images\Options.png" Label="Имя пользователя" Width="100"/>
+                    <ribbon:RibbonButton x:Name="Update"  LargeImageSource="Images\Options.png" Label="Обновление" Width="100"/>
+                </ribbon:RibbonGroup>
+            </ribbon:RibbonTab>
+        </ribbon:Ribbon>
+        <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Label x:Name="PeriodNotesLabel" Visibility="Visible" Margin="5" Width="55">
+                <Image x:Name="PeriodNotesImage" Height="45" Width="45" Visibility="Visible" 
+                               Source="Images\warning.png" Stretch="Fill">
+                    <ToolTipService.ToolTip>
+                        <TextBlock FontSize="30" Width="700" Height="auto" Text="{Binding DayMessage}"
+                                           TextWrapping="Wrap" FontWeight="Bold"/>
+                    </ToolTipService.ToolTip>
+                </Image>
+            </Label>
+            <Label x:Name="DayLimitLabel" Visibility="Visible" Margin="5" Width="55">
+                <Image x:Name="DayLimitImage" Height="45" Width="45" Visibility="Visible" Source="Images\brick.png" Stretch="Fill">
+                    <ToolTipService.ToolTip>
+                        <TextBlock FontSize="30" Width="700" Height="auto" Text="{Binding DayLimit}" TextWrapping="Wrap" FontWeight="Bold"/>
+                    </ToolTipService.ToolTip>
+                </Image>
+            </Label>
+        </StackPanel>
+        <!--#endregion-->
+
+        <!--#region Главное меню старый интерфейс-->
+        <ToolBar DockPanel.Dock="Top" Height="60" BorderThickness="0" BorderBrush="LightGray" Name="OldInterface" Grid.ColumnSpan="2" 
+                 Visibility="Collapsed" Background="LightGray">
+            <StackPanel Orientation="Horizontal">
+                <Button Width="41" Height="41" Margin="5" Name="AddGroupButton" ToolTip="Добавить новую группу" Click="AddGroupButton_Click">
+                    <Image Source="Images\addgroup.png"  Height="43"/>
+                </Button>
+                <Button Width="41" Height="41" Margin="5" Name="ReportButton" ToolTip="Печать отчетов" Click="ReportButton_Click">
+                    <Image Source="Images\printer.png"  Height="43"/>
+                </Button>
+                <Button Width="41" Height="41" Margin="5" Name="TableButton"  ToolTip="Редактирование таблиц" Click="TableButton_Click">
+                    <Image Source="Images\table1.png"  Height="43"/>
+                </Button>
+                <Button Width="41" Height="41" Margin="5" Name="CalendarButton"  ToolTip="Календарь" Click="CalendarButton_Click">
+                    <Image Source="Images\calendar1.png" Height="43"/>
+                </Button>
+                <Button Width="41" Height="41" Margin="5" Name="StatReportButton" ToolTip="Печать статистических отчетов" Click="StatReportButton_Click">
+                    <Image Source="Images\Stat.png" Height="43"/>
+                </Button>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label Content="{Binding Path=TitleString}" HorizontalAlignment="Center" VerticalAlignment="Center" 
+                           FontSize="32" FontWeight="Bold" Width="700" HorizontalContentAlignment="Center" FontFamily="Tahoma"/>
+                <Label x:Name="PeriodNotesLabel1" Visibility="Visible" Margin="5" Width="45">
+                    <Image x:Name="PeriodNotesImage1" Height="35" Width="35" Visibility="Visible" 
+                               Source="Images\warning.png" Stretch="Fill">
+                        <ToolTipService.ToolTip>
+                            <TextBlock FontSize="30" Width="700" Height="auto" Text="{Binding DayMessage}"
+                                           TextWrapping="Wrap" FontWeight="Bold"/>
+                        </ToolTipService.ToolTip>
+                    </Image>
+                </Label>
+                <Label x:Name="DayLimitLabel1" Visibility="Visible" Margin="5" Width="45">
+                    <Image x:Name="DayLimitImage1" Height="35" Width="35" Visibility="Visible" Source="Images\brick.png" Stretch="Fill">
+                        <ToolTipService.ToolTip>
+                            <TextBlock FontSize="30" Width="700" Height="auto" Text="{Binding Path=DayLimit}" TextWrapping="Wrap" FontWeight="Bold"/>
+                        </ToolTipService.ToolTip>
+                    </Image>
+                </Label>
+            </StackPanel>
+        </ToolBar>
+        <!--#endregion-->
+
+        <!-- #region Left Side -->        
+        <ScrollViewer Grid.Row="1" Grid.ColumnSpan="2">
+            <StackPanel Orientation="Vertical" Background="AliceBlue" Name="GroupList"/>
+        </ScrollViewer>
+        <!--<GridSplitter Grid.Column="1" Width="5" Grid.Row="0" Grid.RowSpan="3" Background="White" BorderThickness="1" BorderBrush="LightGray"/>-->
+        <!-- #endregion -->
+
+        <!-- #region Right Sidebar -->
+        <StackPanel Grid.Row="0" Grid.Column="2" Background="AliceBlue" Grid.RowSpan="2">
+            <Viewbox>
+                <Calendar IsTodayHighlighted="False" Name="calendar" Margin="10"
+                          SelectedDate="{Binding Path=SelectedDate, Mode=TwoWay}"
+                          DisplayDate="{Binding Path=SelectedDate, Mode=TwoWay}">
+                </Calendar>
+            </Viewbox>
+            <Expander Header="Отсутствующие" FontSize="18" Margin="10" IsExpanded="True">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition Height="30"/>
+                    </Grid.RowDefinitions>
+                    <Border CornerRadius="5" Background="AliceBlue" Height="150" Margin="10" Name="missing" BorderThickness="1" BorderBrush="Gray" >
+                        <TreeView Name="MissingPanel" Background="White" FontSize="14" Foreground="Red"/>
+                    </Border>
+                    <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
+                        <Button Width="100" Content="Добавить" FontSize="14" Height="30" HorizontalAlignment="Center"
+                        VerticalAlignment="Top" Name="AddBt"  Margin="5,0" Click="AddMissing_Click"/>
+                    </StackPanel>
+                </Grid>
+            </Expander>
+            <Expander Header="Назначенные экскурсии" IsExpanded="True" FontSize="18" Margin="10">
+                <TreeView Name="GuidTreeView" Height="200" Margin="10,10,10,0" FontSize="14"
+                          ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                    
+                </TreeView>
+            </Expander>
+        </StackPanel>
+        <!-- #endregion -->
+        
+        <!--#region Затеменение-->
+        <Border Grid.ColumnSpan="2" Grid.RowSpan="3" Name="Fade" Background="Black" Opacity="0.7"
+                Visibility="{Binding Path=ShowFade, Converter={StaticResource Bool2Vis}, TargetNullValue=Visibility.Visible}"/>
+        <!--#endregion-->
+    </Grid>
+</Window>

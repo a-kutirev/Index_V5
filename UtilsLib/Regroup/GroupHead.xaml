@@ -1,0 +1,38 @@
+﻿<UserControl x:Class="UtilsLib.Regroup.GroupHead"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:UtilsLib.Regroup"
+             mc:Ignorable="d" Height="130" Margin="5">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/WPFControlLibrary;component\Resource\_ComboBox.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Border CornerRadius="5" Grid.RowSpan="2" BorderThickness="1" BorderBrush="LightBlue">
+            <Border.Effect>
+                <DropShadowEffect Color="LightGray"/>
+            </Border.Effect>
+            <Border.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="White" Offset="1"/>
+                    <GradientStop Color="AliceBlue" Offset="0.8"/>
+                    <GradientStop Color="AliceBlue" Offset="0.2"/>
+                    <GradientStop Color="LightSkyBlue" Offset="0"/>
+                </LinearGradientBrush>
+            </Border.Background>
+        </Border>
+        <ComboBox Margin="5,0" SelectedIndex="0" FontWeight="Bold" Name="headComboBox">
+            <ComboBoxItem >Линейный отдел МВД РФ на станции Новосибирск</ComboBoxItem>
+        </ComboBox>
+        <StackPanel Orientation="Horizontal" Grid.Row="1" Name="BodyList"/>
+    </Grid>
+</UserControl>

@@ -1,0 +1,22 @@
+﻿<UserControl x:Class="WpfControlLibrary.TimePickerControl.TimePickerControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WpfControlLibrary.TimePickerControl"
+             mc:Ignorable="d" 
+             >
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="..\Resource\_ComboBox.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <StackPanel Orientation="Horizontal">
+        <ComboBox Width="60" Margin="0,0,7,0" Name="HourCombo"   ItemsSource="{Binding HourView}"   FontSize="16" FontWeight="Bold"
+                  DisplayMemberPath="hourstring" SelectedValuePath="hourvalue" SelectedValue="{Binding HourVal, Mode=TwoWay}"/>
+        <ComboBox Width="60" Name="MinuteCombo" ItemsSource="{Binding MinuteView}"  FontSize="16" FontWeight="Bold"
+                  DisplayMemberPath="minutestring" SelectedValuePath="minutevalue" SelectedValue="{Binding MinuteVal, Mode=TwoWay}"/>
+    </StackPanel>
+</UserControl>

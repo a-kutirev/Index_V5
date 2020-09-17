@@ -1,0 +1,56 @@
+﻿<UserControl x:Class="WpfControlLibrary.EventCalendar.MonthView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WpfControlLibrary.EventCalendar"
+             Loaded="UserControl_Loaded"
+              HorizontalAlignment="Stretch" VerticalAlignment="Stretch" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch">
+    <Grid VerticalAlignment="Stretch">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal" Background="AliceBlue">
+            <Image x:Name="MonthGoPrev" Height="24" RenderTransformOrigin="0.5,0.5" Margin="20,0,6,0"
+                       MouseLeftButtonUp="MonthGoPrev_MouseLeftButtonUp">
+                <Image.RenderTransform>
+                    <RotateTransform Angle="180"/>
+                </Image.RenderTransform>
+            </Image>
+            <Image Name="MonthGoNext" Height="24" Margin="6,0,6,0"
+                   MouseLeftButtonUp="MonthGoNext_MouseLeftButtonUp"/>
+            <Label x:Name="MonthYearLabel" Content="March 2009" FontSize="18" FontFamily="Arial" VerticalAlignment="Center"
+                   FontWeight="Bold"/>
+        </StackPanel>
+        <Grid Grid.Row="1" Background="AliceBlue">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="20"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Label Grid.Column="1" Content="Понедельник" FontSize="12" Margin="2,0,0,2" Padding="0,1,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" BorderThickness="0,0,1,0" FontWeight="Bold"/>
+            <Label Grid.Column="2" Content="Вторник" FontSize="12" Margin="2,0,0,2" Padding="0,1,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" BorderThickness="0,0,1,0" FontWeight="Bold"/>
+            <Label Grid.Column="3" Content="Среда" FontSize="12" Margin="2,0,0,2" Padding="0,1,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" BorderThickness="0,0,1,0" FontWeight="Bold"/>
+            <Label Grid.Column="4" Content="Четверг" FontSize="12" Margin="2,0,0,2" Padding="0,1,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" BorderThickness="0,0,1,0" FontWeight="Bold"/>
+            <Label Grid.Column="5" Content="Пятница" FontSize="12" Margin="2,0,0,2" Padding="0,1,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" BorderThickness="0,0,1,0" FontWeight="Bold"/>
+            <Label Grid.Column="6" Content="Суббота" FontSize="12" Margin="2,0,0,2" Padding="0,1,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" BorderThickness="0,0,1,0" FontWeight="Bold"/>
+            <Label Grid.Column="7" Content="Воскресенье" FontSize="12" Margin="2,0,0,2" Padding="0,1,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold"/>
+        </Grid>
+        <!--<StackPanel x:Name="MonthViewStack" Grid.Row="2">
+            
+        </StackPanel>-->
+        <Grid x:Name="MonthViewGrid" Grid.Row="2">
+            <Grid.RowDefinitions>
+            </Grid.RowDefinitions>
+        </Grid>
+
+    </Grid>
+</UserControl>
+

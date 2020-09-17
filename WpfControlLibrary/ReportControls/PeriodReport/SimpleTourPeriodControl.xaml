@@ -1,0 +1,22 @@
+﻿<UserControl x:Class="WpfControlLibrary.ReportControls.SimpleTourPeriodControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WpfControlLibrary.ReportControls"
+             mc:Ignorable="d" Margin="50,0,0,0">
+    <Grid Name="Back_">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="450"/>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="100"/>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Grid.Column="0" TextWrapping="Wrap" Text="{Binding TourName}" FontSize="14" FontWeight="Bold"
+                   Background="{Binding Back}"/>
+        <TextBlock Grid.Column="1" Background="{Binding Back}"/>
+        <TextBlock Grid.Column="2" TextWrapping="Wrap" Text="{Binding TourCount}" FontSize="14" FontWeight="Bold"
+                   Background="{Binding Back}"/>
+
+    </Grid>
+</UserControl>

@@ -1,0 +1,435 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{645F892F-94EB-44C0-8359-84E9E3ABD705}</ProjectGuid>
+    <OutputType>library</OutputType>
+    <RootNamespace>WpfControlLibrary</RootNamespace>
+    <AssemblyName>WpfControlLibrary</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\Build\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\Build\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AdditionGuidControl\AdditionGuidControl.xaml.cs">
+      <DependentUpon>AdditionGuidControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AutocompleteTextBox\AutoCompleteTextBox.cs" />
+    <Compile Include="CommentControl\RTBControl.xaml.cs">
+      <DependentUpon>RTBControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CommentControl\SelectAutocompleteWindow.xaml.cs">
+      <DependentUpon>SelectAutocompleteWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CommentWindow.xaml.cs">
+      <DependentUpon>CommentWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EventCalendar\Appointment.cs" />
+    <Compile Include="EventCalendar\DayBoxAppointmentControl.xaml.cs">
+      <DependentUpon>DayBoxAppointmentControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EventCalendar\DayBoxControl.xaml.cs">
+      <DependentUpon>DayBoxControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EventCalendar\MonthView.xaml.cs">
+      <DependentUpon>MonthView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EventCalendar\WeekOfDaysControl.xaml.cs">
+      <DependentUpon>WeekOfDaysControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GroupControls\EventControl.xaml.cs">
+      <DependentUpon>EventControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GroupControls\GroupControl.xaml.cs">
+      <DependentUpon>GroupControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GroupControls\GroupEditControl.xaml.cs">
+      <DependentUpon>GroupEditControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GroupControls\HeaderControl.xaml.cs">
+      <DependentUpon>HeaderControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MissingControl\ButtonsPanel.xaml.cs">
+      <DependentUpon>ButtonsPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MissingControl\MissingControl.xaml.cs">
+      <DependentUpon>MissingControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PagedTableControl\PagedTableControl.xaml.cs">
+      <DependentUpon>PagedTableControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PeriodSelector\PeriodSelector.xaml.cs">
+      <DependentUpon>PeriodSelector.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="ReportControls\DayReport\FullDayReportHeader.xaml.cs">
+      <DependentUpon>FullDayReportHeader.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ReportControls\DayReport\FullDayReportSimpleEvent.xaml.cs">
+      <DependentUpon>FullDayReportSimpleEvent.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ReportControls\DayReport\FullDayReportSimpleGroup.xaml.cs">
+      <DependentUpon>FullDayReportSimpleGroup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ReportControls\ITimed.cs" />
+    <Compile Include="ReportControls\PeriodReport\ListEventPeriodSimple.xaml.cs">
+      <DependentUpon>ListEventPeriodSimple.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ReportControls\PeriodReport\ListGroupPeriodHeader.xaml.cs">
+      <DependentUpon>ListGroupPeriodHeader.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ReportControls\PeriodReport\ListGroupPeriodSimple.xaml.cs">
+      <DependentUpon>ListGroupPeriodSimple.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ReportControls\DayReport\NoteControl.xaml.cs">
+      <DependentUpon>NoteControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ReportControls\DayReport\SimpleEventControl.xaml.cs">
+      <DependentUpon>SimpleEventControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ReportControls\DayReport\SimpleGroupControl.xaml.cs">
+      <DependentUpon>SimpleGroupControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ReportControls\PeriodReport\SimpleGuidPeriodControl.xaml.cs">
+      <DependentUpon>SimpleGuidPeriodControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ReportControls\PeriodReport\SimpleItogPeriodControl.xaml.cs">
+      <DependentUpon>SimpleItogPeriodControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ReportControls\PeriodReport\SimpleTourPeriodControl.xaml.cs">
+      <DependentUpon>SimpleTourPeriodControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ReportControls\_PageFooter.xaml.cs">
+      <DependentUpon>_PageFooter.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TimePickerControl\TimePickerControl.xaml.cs">
+      <DependentUpon>TimePickerControl.xaml</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ClassLibrary\ClassLibrary.csproj">
+      <Project>{B380D159-679E-465F-B074-ED220D47BE02}</Project>
+      <Name>ClassLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DBWrapper\DBWrapper.csproj">
+      <Project>{D6D08E79-0C2D-4AF9-9183-924D44981629}</Project>
+      <Name>DBWrapper</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="AdditionGuidControl\AdditionGuidControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AutocompleteTextBox\AutoCompleteComboBoxStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CommentControl\RTBControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CommentControl\SelectAutocompleteWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CommentWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EventCalendar\DayBoxAppointmentControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EventCalendar\DayBoxControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EventCalendar\MonthView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EventCalendar\WeekOfDaysControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GroupControls\EventControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GroupControls\GroupControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="GroupControls\GroupEditControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GroupControls\HeaderControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MissingControl\ButtonsPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MissingControl\MissingControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PagedTableControl\PagedTableControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PeriodSelector\PeriodSelector.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ReportControls\DayReport\FullDayReportHeader.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ReportControls\DayReport\FullDayReportSimpleEvent.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ReportControls\DayReport\FullDayReportSimpleGroup.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ReportControls\PeriodReport\ListEventPeriodSimple.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ReportControls\PeriodReport\ListGroupPeriodHeader.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ReportControls\PeriodReport\ListGroupPeriodSimple.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ReportControls\DayReport\NoteControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ReportControls\DayReport\SimpleEventControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ReportControls\DayReport\SimpleGroupControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ReportControls\PeriodReport\SimpleGuidPeriodControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ReportControls\PeriodReport\SimpleItogPeriodControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ReportControls\PeriodReport\SimpleTourPeriodControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ReportControls\_PageFooter.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resource\_Button.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resource\_Calendar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resource\_CheckBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resource\_ComboBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resource\_DataGrid.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resource\_DatePicker.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resource\_Label.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resource\_ListBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resource\_PasswordBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resource\_RadioButton.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resource\_RichTextBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resource\_TabControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resource\_TextBlock.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resource\_TextBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resource\_ToggleButton.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resource\_TreeView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="TimePickerControl\TimePickerControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resource\green.png" />
+    <Resource Include="Resource\red.png" />
+    <Resource Include="Resource\white.png" />
+    <Resource Include="Resource\yellow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resource\pen.png" />
+    <Resource Include="Resource\redcross.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resource\box.png" />
+    <Resource Include="Resource\circle.png" />
+    <Resource Include="Resource\cross.png" />
+    <Resource Include="Resource\gray.png" />
+    <Resource Include="Resource\minus_calend.png" />
+    <Resource Include="Resource\Tjek.png" />
+    <Resource Include="Resource\transp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resource\Complete.png" />
+    <Resource Include="Resource\Confirm.png" />
+    <Resource Include="Resource\Confirm_.png" />
+    <Resource Include="Resource\Delete.png" />
+    <Resource Include="Resource\writing.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resource\ForwardGreen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resource\__time.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resource\__expo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resource\__guid.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resource\__amount.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resource\__acomp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resource\__comment.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resource\__org.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resource\__contact.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resource\__geo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resource\__age.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resource\check_error.png" />
+    <Resource Include="Resource\check_ok.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resource\minus.png" />
+    <Resource Include="Resource\plus.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

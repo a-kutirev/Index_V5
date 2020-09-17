@@ -1,0 +1,35 @@
+﻿<Window x:Class="Tours_V5.RefBook.EventEditWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Tours_V5.RefBook"
+        mc:Ignorable="d" ResizeMode="NoResize" WindowStartupLocation="CenterScreen"
+        Title="Данные статистики и статус мероприятия" Height="200" Width="250">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/WpfControlLibrary;component\Resource\_Button.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/WpfControlLibrary;component\Resource\_TextBox.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+            <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Grid Background="AliceBlue">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="70"/>
+        </Grid.RowDefinitions>
+        <TextBox Style="{StaticResource TextBoxStyle}" Margin="20, 25" Text="{Binding Id, Mode=TwoWay}" Name ="idText"
+                 HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20" FontWeight="Bold"/>
+        <Border Grid.Row="3">
+            <Border.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFDFE9F5" Offset="1"/>
+                    <GradientStop Color="{DynamicResource ControlLightColor}" Offset="0"/>
+                </LinearGradientBrush>
+            </Border.Background>
+            <Button Width="150" Height="35" Content="Показать" Click="Button_Click" />
+        </Border>
+    </Grid>
+</Window>

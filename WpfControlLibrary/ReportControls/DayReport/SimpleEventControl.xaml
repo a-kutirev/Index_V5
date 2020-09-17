@@ -1,0 +1,19 @@
+﻿<UserControl x:Class="WpfControlLibrary.ReportControls.SimpleEventControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WpfControlLibrary.ReportControls"
+             mc:Ignorable="d" 
+             HorizontalAlignment="Left" HorizontalContentAlignment="Left"
+             VerticalAlignment="Top" VerticalContentAlignment="Top"
+             Margin="0,0,0,0" >
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="50"/>
+            <ColumnDefinition Width="700"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock FontSize="16" FontWeight="Bold" Grid.Column="0" Name="timeText" FontFamily="Times New Roman"/>
+        <RichTextBox Name="EventDesc" BorderThickness="0" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+    </Grid>
+</UserControl>

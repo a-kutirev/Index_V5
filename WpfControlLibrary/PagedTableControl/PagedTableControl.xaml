@@ -1,0 +1,53 @@
+﻿<UserControl x:Class="WpfControlLibrary.PagedTableControl.PagedTableControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WpfControlLibrary.PagedTableControl"
+             Loaded="UserControl_Loaded"
+             mc:Ignorable="d" d:DesignHeight="150.989" d:DesignWidth="452.006">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="..\Resource\_ComboBox.xaml"/>
+                <ResourceDictionary Source="..\Resource\_Button.xaml"/>
+                <ResourceDictionary Source="..\Resource\_Label.xaml"/>
+                <ResourceDictionary Source="..\Resource\_DataGrid.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid Margin="0,0,0,0">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="30" MinHeight="30"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+        <DataGrid Grid.ColumnSpan="2" Name="grid" SelectionChanged="Grid_SelectionChanged" AlternatingRowBackground="WhiteSmoke"
+                  FontSize="14"/>
+        <Label Name="totalCounter" Content="Всего записей: xxxx" VerticalContentAlignment="Top" Grid.Row="1" Background="#FFDDDDDD" BorderBrush="#FFACACAC"
+               Padding="1,1,1,1" HorizontalAlignment="Left" BorderThickness="1" Width="142" Template="{StaticResource LabelTmpl}" Grid.ColumnSpan="2"/>
+
+        <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button HorizontalAlignment="Left" Height="26" VerticalAlignment="Top" Width="26" BorderBrush="#FFACACAC"
+                    Name="firstBt" Click="Bt_Click" Margin="1"> &lt;&lt; </Button>
+            <Button HorizontalAlignment="Left" Height="26" VerticalAlignment="Top" Width="26" BorderBrush="#FFACACAC"
+                    Name="previousBt" Click="Bt_Click" Margin="1"> &lt; </Button>
+            <Button HorizontalAlignment="Left" Height="26" VerticalAlignment="Top" Width="120" BorderBrush="#FFACACAC"
+                    Name="counter" Margin="1"> Страница x из xxx </Button>
+            <Button HorizontalAlignment="Left" Height="26" VerticalAlignment="Top" Width="26" BorderBrush="#FFACACAC"
+                    Name="nextBt" Click="Bt_Click" Margin="1"> &gt; </Button>
+            <Button HorizontalAlignment="Left" Height="26" VerticalAlignment="Top" Width="26" BorderBrush="#FFACACAC"
+                    Name="lastBt" Click="Bt_Click" Margin="1"> &gt;&gt; </Button>
+            <ComboBox Width="55" BorderBrush="#FF707070" Height="26" SelectedIndex="0" Name="numItemsCombo" SelectionChanged="NumItemsCombo_SelectionChanged" Margin="1,1,1,3">
+                <TextBlock>10</TextBlock>
+                <TextBlock>25</TextBlock>
+                <TextBlock>50</TextBlock>
+                <TextBlock>100</TextBlock>
+            </ComboBox>
+
+        </StackPanel>
+    </Grid>
+</UserControl>

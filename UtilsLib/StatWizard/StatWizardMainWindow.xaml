@@ -1,0 +1,93 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:UtilsLib.StatWizard"
+        xmlns:PeriodSelector="clr-namespace:WpfControlLibrary.PeriodSelector;assembly=WpfControlLibrary" x:Class="UtilsLib.StatWizard.StatWizardMainWindow"
+        ResizeMode="NoResize" WindowStartupLocation="CenterScreen"
+        mc:Ignorable="d" Height="480" Width="640" Loaded="Window_Loaded">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/WPFControlLibrary;component\Resource\_Button.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/WPFControlLibrary;component\Resource\_TreeView.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/WPFControlLibrary;component\Resource\_TabControl.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/WPFControlLibrary;component\Resource\_ListBox.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+            <BooleanToVisibilityConverter x:Key="Bool2Vis"/>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Grid Background="AliceBlue">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="45"/>
+        </Grid.RowDefinitions>
+        <TabControl Name="tc">
+            <TabItem Header="0">
+                <StackPanel Orientation="Horizontal">
+                    <Border Margin="5,10" Background="AliceBlue" CornerRadius="10" Width="150" BorderThickness="1" BorderBrush="LightGray"/>
+                    <Border Margin="5,10" Background="AliceBlue" CornerRadius="10" Width="450" BorderThickness="1" BorderBrush="LightGray">
+                        <StackPanel Orientation="Vertical" Margin="5,5,5,5">
+                            <TextBlock Text="Тип отчета" Margin="20,5,5,20"/>
+                            <RadioButton Margin="35,3,3,3" GroupName="Step1" IsChecked="True" Name="rb_0"
+                                         Checked="rb_Checked" Unchecked="rb_Checked">
+                                <RadioButton.Content>
+                                    <TextBlock Text="Количество посетителей по категориям за периоды времени" TextWrapping="Wrap"/>
+                                </RadioButton.Content>
+                            </RadioButton>
+                            <RadioButton Margin="35,3,3,3" GroupName="Step1" Name="rb_1"
+                                         Checked="rb_Checked" Unchecked="rb_Checked">
+                                <RadioButton.Content>
+                                    <TextBlock Text="Общее количество посетителей за периоды времени" TextWrapping="Wrap"/>
+                                </RadioButton.Content>
+                            </RadioButton>
+                        </StackPanel>
+                    </Border>
+                </StackPanel>
+            </TabItem>
+            <TabItem Header="1">
+                <StackPanel Orientation="Horizontal">
+                    <Border Margin="5,10" Background="AliceBlue" CornerRadius="10" Width="150" BorderThickness="1" BorderBrush="LightGray"/>
+                    <Border Margin="5,10" Background="AliceBlue" CornerRadius="10" Width="450" BorderThickness="1" BorderBrush="LightGray">
+                        <StackPanel Orientation="Vertical">
+                            <TextBlock Text="Выберите интересующие Вас категории посетителей: " Margin="20,15"/>
+                            <ListBox Width="250" Height="261" Margin="99,0" Name="CategoryListBox">
+                            </ListBox>
+                        </StackPanel>
+                    </Border>
+                </StackPanel>
+            </TabItem>
+            <TabItem Header="2">
+                <StackPanel Orientation="Horizontal">
+                    <Border Margin="5,10" Background="AliceBlue" CornerRadius="10" Width="150" BorderThickness="1" BorderBrush="LightGray"/>
+                    <Border Margin="5,10" Background="AliceBlue" CornerRadius="10" Width="450" BorderThickness="1" BorderBrush="LightGray">
+                        <StackPanel Orientation="Vertical">
+                            <RadioButton Margin="20,5" IsChecked="True" GroupName="Step3" Name="Step3_1" Checked="Step3_1_Checked" Unchecked="Step3_1_Checked">
+                                <RadioButton.Content>
+                                    <TextBlock Text="Непрерывный период по месяцам (Задать начальный и конечный месяц)" TextWrapping="Wrap"/>
+                                </RadioButton.Content>
+                            </RadioButton>
+                            <RadioButton Margin="20,5" GroupName="Step3" Name="Step3_2" Checked="Step3_1_Checked"  Unchecked="Step3_1_Checked">
+                                <RadioButton.Content>
+                                    <TextBlock Text="Произвольные периоды (Самому задать набор периодов)" TextWrapping="Wrap"/>
+                                </RadioButton.Content>
+                            </RadioButton>
+                            <Separator Margin="5,2" BorderBrush="LightGray" BorderThickness="2"/>
+                            <PeriodSelector:PeriodSelector HorizontalAlignment="Center" Name="psel"/>
+                            <ListBox Margin="10" Height="252" Name="PeriodListBox"/>
+                        </StackPanel>
+                    </Border>
+                </StackPanel>
+            </TabItem>
+            <TabItem Header="3">
+
+            </TabItem>
+        </TabControl>
+        <StackPanel Orientation="Horizontal" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Right">
+            <Button Width="100" Margin="5" Content="Назад" Name ="PrevPageBt" Click="PrevPageBt_Click"/>
+            <Button Width="100" Margin="5,5,50,5" Content="Вперед" Name="NextPageBt" Click="NextPageBt_Click"/>
+            <Button Width="100" Margin="5" Content="Показать" Name="FinishBt" Click="FinishBt_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>
