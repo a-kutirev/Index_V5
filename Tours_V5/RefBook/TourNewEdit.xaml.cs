@@ -111,7 +111,7 @@ namespace Tours_V5.RefBook
                 MessageBox.Show("Данные сохранены");
                 DialogResult = true;
             }
-            catch(Exception ex)
+            catch(Exception)
             {
                 MessageBox.Show("Ошибка сохранения");
                 DialogResult = false;

@@ -19,7 +19,6 @@ namespace Tours_V5.Setup
         private string m_database = "";
         private string m_username = "";
         private string m_password = "";
-        private bool tested = false;
 
         public string Server { get => m_server;
             set
@@ -77,7 +76,7 @@ namespace Tours_V5.Setup
 
             bool r = true;
             try { conn.Open(); }
-            catch (Exception ex) { r = false; }
+            catch (Exception) { r = false; }
 
             if (r)
             {
@@ -100,7 +99,7 @@ namespace Tours_V5.Setup
 
             bool r = true;
             try { conn.Open(); }
-            catch (Exception ex) { r = false; }
+            catch (Exception) { r = false; }
 
             if (r) MessageBox.Show("Соединение успешно установлено");
             else MessageBox.Show("Соединение не установлено");            
@@ -108,7 +107,6 @@ namespace Tours_V5.Setup
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
-            tested = false;
         }
     }
 }

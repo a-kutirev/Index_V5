@@ -27,18 +27,13 @@ namespace ReportLib.DayReports
         public bool ShowNotes { get => m_showNotes; set => m_showNotes = value; }
 
         enum Month { Января, Февраля, Марта, Апреля, Мая, Июня, Июля, Августа, Сентября, Октября, Ноября, Декабря };
-        private DateTime date;
-        private bool ShowNonpersist = false;
-        private int m_year, m_period;
-        private bool m_check = false;
-        private string m_type = "";
+
         private List<string> monthStr = new List<string> { "Января", "Февраля", "Марта", "Апреля", "Мая",
             "Июня", "Июля", "Августа", "Сентября", "Октября", "Ноября", "Декабря" };
         private List<string> monthStr_2 = new List<string> { "январь", "февраль", "март", "апрель", "май",
             "июнь", "июль", "август", "сентябрь", "октябрь", "ноябрь", "декабрь" };
         private List<string> dayStr = new List<string> { "воскресенье", "понедельник", "вторник", "среда", "четверг", "пятница",
             "суббота"};
-        private bool nonpersExist = false;
 
         #endregion
 
@@ -108,7 +103,6 @@ namespace ReportLib.DayReports
             result.HorizontalAlignment = HorizontalAlignment.Left;
 
             int c = container.Children.Count;
-            int startedIndex = 0;
 
             while (container.Children.Count != 0)
             {

@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 using ClassLibrary;
 using ClassLibrary.Models;
 
+
 namespace Tours_V5
 {
     /// <summary>
@@ -217,6 +218,8 @@ namespace Tours_V5
             {
                 string sqlEvent = $"select * from eventgroups where eventgroupdate between '{StartTime.ToMySqlDateString()}' and '{EndTime.ToMySqlDateString()}'";
                 ev_models = (List<EventGroupModel>)DBWrapper.MySqlWrapper.Select(sqlEvent).ToList<EventGroupModel>();
+
+                EventsGroupBox.Visibility = Visibility.Visible;
 
                 int ev_total_count = ev_models.Count;
                 int ev_completed_count = 0;

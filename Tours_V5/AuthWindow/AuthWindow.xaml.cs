@@ -132,7 +132,7 @@ namespace Tours_V5.AuthWindow
 
             bool r = true;
             try { conn.Open(); }
-            catch (Exception ex) { r = false; }
+            catch (Exception) { r = false; }
 
             if (!r) result = false;
             else MySqlWrapper.connectionString = ConnectionString;

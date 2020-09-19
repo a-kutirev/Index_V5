@@ -220,7 +220,7 @@ namespace Tours_V5
                 tt.Content = tip;
                 CommentRTB.ToolTip = tt;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
             }

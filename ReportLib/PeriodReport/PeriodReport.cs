@@ -20,8 +20,6 @@ namespace ReportLib.PeriodReport
         #region Members
 
         private FixedDocument m_document;
-        private string m_startDate;
-        private string m_endDate;
         private bool m_calcEvents;
 
         public FixedDocument Document { get => m_document; set => m_document = value; }

@@ -100,7 +100,6 @@ namespace WpfControlLibrary.GroupControls
             m_internalGroups.Add(gc);
             gc.GuidComboReload += Gc_GuidComboReload;
 
-            bool allCompleted = true;
             bool allDeleted = true;
             bool existOpened = false;
             bool existCompleted = false;

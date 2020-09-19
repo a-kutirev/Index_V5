@@ -264,7 +264,7 @@ namespace WpfControlLibrary.GroupControls
                 tt.Content = tip;
                 CommentRTB.ToolTip = tt;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
             }

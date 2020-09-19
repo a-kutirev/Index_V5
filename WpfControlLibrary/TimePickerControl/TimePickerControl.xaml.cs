@@ -14,8 +14,6 @@ namespace WpfControlLibrary.TimePickerControl
         #region Members
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public event EventHandler TimeValueChanged;
-
         private TimeSpan m_time;
         private DateTime m_date;
         private DataView m_hourView;

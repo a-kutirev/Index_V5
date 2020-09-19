@@ -15,7 +15,7 @@ namespace Tours_V5
         private DateTime m_date;
         private List<GuidModel> guids;
         private Dictionary<int, string> m_MastersLists;
-        private string masters = "";
+
 
         public SelectEventMasters(DateTime d, Dictionary<int, string> mastersDict = null)
         {

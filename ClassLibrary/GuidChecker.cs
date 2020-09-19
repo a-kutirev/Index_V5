@@ -124,9 +124,7 @@ namespace ClassLibrary
     public class OneGuid
     {
         #region Member Fields
-        private int m_count;
         public int Id { get; set; }
-        private string FullName;
         public int Count { get => tourTimes.Count; }
         private List<TourTime> tourTimes = new List<TourTime>();
         #endregion

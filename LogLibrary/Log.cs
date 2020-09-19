@@ -51,7 +51,7 @@ namespace LogLibrary
                     }
                 }
             }
-            catch(Exception ex)
+            catch(Exception)
             {
                 
             }

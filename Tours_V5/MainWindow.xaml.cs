@@ -278,7 +278,6 @@ namespace Tours_V5
 
         #region Calendar Events
 
-        private int currentMonth = 0;
         private void calendar_DisplayDateChanged(object sender, CalendarDateChangedEventArgs e)
         {
             PeriodNotesLabel.Visibility = Visibility.Collapsed;
