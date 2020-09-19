@@ -20,8 +20,8 @@
                 </LinearGradientBrush>
             </Border.Background>
             <StackPanel Orientation="Horizontal">
-                <TextBlock Text="{Binding Time, Mode=TwoWay}" VerticalAlignment="Center" FontSize="16" FontWeight="Bold" Margin="5,0,20,0"/>
-                <TextBlock Text="{Binding ExpoName, Mode=TwoWay}" VerticalAlignment="Center" FontSize="16" Margin="5,0,20,0"
+                <TextBlock Text="{Binding Model.Grouptime, StringFormat=hh\\:mm}" VerticalAlignment="Center" FontSize="16" FontWeight="Bold" Margin="5,0,20,0"/>
+                <TextBlock Text="{Binding Model.Tourname, Mode=TwoWay}" VerticalAlignment="Center" FontSize="16" Margin="5,0,20,0"
                            TextWrapping="Wrap" Width="330"/>
             </StackPanel>
         </Border>

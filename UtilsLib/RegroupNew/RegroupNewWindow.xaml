@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:UtilsLib.RegroupNew"
         mc:Ignorable="d" ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
         Title="Группировка" Height="579.5" Width="900">
     <Window.Resources>
         <ResourceDictionary>
@@ -28,6 +29,9 @@
             <local:GroupHeaderControl Margin="5"/>
             <local:GroupHeaderControl Margin="5"/>
         </WrapPanel>
-        <Button Width="150" Height="35" Content="Сохранить" Click="Button_Click" Grid.Row="1" Margin="508,10,10,10"/>
+        <StackPanel Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Right" Orientation="Horizontal">
+            <Button Width="150" Height="35" Name="CancBt" Content="Отмена"      Click="CancBt_Click"  Margin="10, 0"/>
+            <Button Width="150" Height="35" Name="SaveBt" Content="Применить"   Click="SaveBt_Click" Margin="10, 0"/>
+        </StackPanel>
     </Grid>
 </Window>

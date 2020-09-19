@@ -29,6 +29,8 @@ namespace UtilsLib.RegroupNew
         private string m_Con1 = "";
         private string m_Con2 = "";
 
+        public bool UseCur = true;
+
         public string Header1
         {
             get => m_Header1;
@@ -112,6 +114,7 @@ namespace UtilsLib.RegroupNew
 
         private void SaveBt_Click(object sender, RoutedEventArgs e)
         {
+            UseCur = (bool)CurrRB.IsChecked;
             DialogResult = true;
         }
     }

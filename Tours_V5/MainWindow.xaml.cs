@@ -249,6 +249,16 @@ namespace Tours_V5
                 mi.Click += Mi_Click; ;
                 contextMenu.Items.Add(mi);
 
+                s = new Separator();
+                contextMenu.Items.Add(s);
+
+                mi = new MenuItem();
+                mi.Name = "RegroupItem";
+                mi.Header = "Перегруппировка";
+                mi.Click += Mi_Click; ;
+                contextMenu.Items.Add(mi);
+
+
                 #endregion
 
                 calendar.DisplayDate = DateTime.Now;
@@ -844,6 +854,9 @@ namespace Tours_V5
                 case "EventItem":
                     wnd = new EventTable();
                     break;
+                case "RegroupItem":
+                    wnd = new RegroupNewWindow(grpList);
+                    break;
                 default:
                     wnd = new ContactTable();
                     break;
@@ -852,6 +865,8 @@ namespace Tours_V5
             ShowFade = true;
             wnd.ShowDialog();
             ShowFade = false;
+
+            calendar_DisplayDateChanged(null, null);
         }
         #endregion
 

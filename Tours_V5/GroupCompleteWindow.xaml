@@ -82,7 +82,9 @@
                     <GradientStop Color="{DynamicResource ControlLightColor}" Offset="0"/>
                 </LinearGradientBrush>
             </Border.Background>
-            
+            <StackPanel Margin="5" HorizontalAlignment="Right" Orientation="Horizontal">
+                <Button Width="100" Height="30" Margin="50,2,5,2" Content="Сохранить" x:Name="SaveBt" Click="Button_Click"/>
+            </StackPanel>
         </Border>
     </Grid>
 </Window>

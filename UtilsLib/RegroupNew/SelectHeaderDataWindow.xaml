@@ -43,8 +43,10 @@
             </Border.Background>
         </Border>
 
-        <RadioButton Grid.Row="2" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" GroupName="HeaderGrp"/>
-        <RadioButton Grid.Row="2" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" GroupName="HeaderGrp"/>
+        <RadioButton Grid.Row="2" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" GroupName="HeaderGrp"
+                     Name="CurrRB" IsChecked="True"/>
+        <RadioButton Grid.Row="2" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" GroupName="HeaderGrp"
+                     Name="NewRB"/>
 
         <TextBlock Grid.Row="0" Grid.Column="0" Text="{Binding Header1}" HorizontalAlignment="Center"
                    TextWrapping="Wrap" FontSize="14" FontWeight="Bold" VerticalAlignment="Center" Margin="5"/>

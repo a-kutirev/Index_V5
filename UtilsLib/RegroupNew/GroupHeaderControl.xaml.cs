@@ -27,8 +27,8 @@ namespace UtilsLib.RegroupNew
         private int m_GroupNumber = -1;
         private string m_header = "";
 
-        
 
+        public event EventHandler<DragEventArgs> OnGroupItemDrop;
         public event PropertyChangedEventHandler PropertyChanged;
 
         public int GroupNumber { get => m_GroupNumber; set => m_GroupNumber = value; }
@@ -90,6 +90,14 @@ namespace UtilsLib.RegroupNew
             }
         }
 
+        public GroupItemControl GetItem(int index)
+        {
+            if (index < GetItemCount())
+                return (GroupItemPanel.Children[index] as GroupItemControl);
+            else
+                return null;
+        }
+
         public int GetItemCount()
         {
             return GroupItemPanel.Children.Count;
@@ -97,57 +105,11 @@ namespace UtilsLib.RegroupNew
 
         private void UserControl_Drop(object sender, DragEventArgs e)
         {
-            GroupItemControl groupItemControl = e.Data.GetData(typeof(GroupItemControl)) as GroupItemControl;
-
-            if (groupItemControl.Tag == this) return;
-
-            if (m_GroupNumber == -1)
-            {
-                this.Margin = new Thickness(10, 20, 10, 20);
-                this.Header = groupItemControl.Model.Organizationname;
-                this.GroupNumber = CalculateNewNumber();                
-                this.Model = new GroupHeaderModel(groupItemControl.Model.Idcommongroup);
-
-                GroupHeaderControl emptyghc = new GroupHeaderControl();
-                emptyghc.Tag = this.Tag;
-                emptyghc.SetEmpty();
-                (this.Tag as WrapPanel).Children.Add(emptyghc);
-            }
-            else
-            {
-
-                bool CheckHeadersAndContacts = CheckHeadAndCont(groupItemControl.Model.Idcommongroup);
-
-                if (!CheckHeadersAndContacts)
-                {
-                    SelectHeaderDataWindow shdw = new SelectHeaderDataWindow(m_model.Idgroupheader, groupItemControl.Model.Idcommongroup);
-
-                    if ((bool)shdw.ShowDialog())
-                    {
-
-                    }
-                }
-            }
-
-            GroupHeaderControl ghc_parent = groupItemControl.Tag as GroupHeaderControl;
-            ghc_parent.Remove(groupItemControl);
-            if(ghc_parent.GetItemCount() == 0)
-            {
-                (ghc_parent.Tag as WrapPanel).Children.Remove(ghc_parent);
-            }
-
-            groupItemControl.Tag = this;
-            Add(groupItemControl);            
-
+            OnGroupItemDrop?.Invoke(this, e);
             Sort();
         }
 
-        private int CalculateNewNumber()
-        {
-            return 111;
-        }
-
-        private bool CheckHeadAndCont(int idCommonGroup)
+        public bool CheckHeadAndCont(int idCommonGroup)
         {
             bool result = true;
 
@@ -193,6 +155,22 @@ namespace UtilsLib.RegroupNew
                 gic.MouseDown += Item_MouseDown;
                 GroupItemPanel.Children.Add(gic);
             }
+        }
+
+        public void SetNewIdCommongroup(int id)
+        {
+            GeoModel gm = new GeoModel((new GroupHeaderModel(id)).Idgeo);
+            OrganizationModel om = new OrganizationModel((new GroupHeaderModel(id)).Idorganization);
+
+            for (int i = 0; i < GroupItemPanel.Children.Count; i++)
+            {
+                (GroupItemPanel.Children[i] as GroupItemControl).Model.Idcommongroup = id;                
+                (GroupItemPanel.Children[i] as GroupItemControl).Model.Organizationname = om.Organizationname;                
+                (GroupItemPanel.Children[i] as GroupItemControl).Model.Geoname = gm.Geoname;
+            }
+
+            Model = new GroupHeaderModel(id);
+            Header = (new OrganizationModel(Model.Idorganization)).Organizationname;
         }
     }
 }
