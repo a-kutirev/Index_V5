@@ -5,6 +5,8 @@ namespace ClassLibrary.Models
 {
     public class AutocompleteModel: INotifyPropertyChanged
     {
+        // Привет 20.09.2020 14.42
+
         #region Members
         private int m_idautocomplete = 0;
         private string m_autocompleteword;
