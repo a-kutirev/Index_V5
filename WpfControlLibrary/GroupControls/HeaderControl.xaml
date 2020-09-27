@@ -43,7 +43,9 @@
         <ComboBox Grid.Column="2" Margin="60,4,4,4" ItemsSource="{Binding Path=ContactSource}" SelectedIndex="0" FontSize="16"
                   SelectionChanged="ComboBox_SelectionChanged" Name="guidComb"/>
         <Image Width="30" Source="/WpfControlLibrary;component/Resource/__contact.png" Margin="6,0,514,0" Grid.Column="2"/>
-        <Button Grid.Column="3" Content="..." FontSize="20" Name="EditAllGroup" Click="EditAllGroup_Click" Width="27" Height="27"/>
+        <Button Grid.Column="3" FontSize="20" Name="EditAllGroup" Click="EditAllGroup_Click" Width="27" Height="27">
+            <Image Source="/WpfControlLibrary;component/Resource/writing.png" />
+        </Button>
         <StackPanel Background="Transparent" Orientation="Vertical" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3" Name="GroupList"/>
     </Grid>
 </UserControl>
