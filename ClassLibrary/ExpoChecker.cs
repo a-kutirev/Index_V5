@@ -23,7 +23,7 @@ namespace ClassLibrary
         private List<GuidLine> m_guidTimeChecker = new List<GuidLine>();
         private Dictionary<int, string> m_startTimechecker = new Dictionary<int, string>();
 
-        private bool CoronaMode = true;
+        private bool CoronaMode = false;
         private TimeSpan maxDif = new TimeSpan(0,45,0);
 
 

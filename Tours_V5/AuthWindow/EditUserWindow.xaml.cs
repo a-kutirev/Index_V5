@@ -158,7 +158,7 @@ namespace Tours_V5.AuthWindow
                     string MD5_psv = PasswordMd5(Comment);
 
                     string sql = $"update users set " +
-                        $"userpass = '{MD5_psv}' " +
+                        $"userspass = '{MD5_psv}' " +
                         $"where idusers = {m_id}";
 
                     MySqlWrapper.Execute(sql);
