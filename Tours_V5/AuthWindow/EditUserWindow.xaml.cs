@@ -108,6 +108,7 @@ namespace Tours_V5.AuthWindow
         #endregion
 
         #region ACtion
+        // test
         private void Cancel_Click(object sender, RoutedEventArgs e)
         {
             DialogResult = false;
@@ -115,6 +116,7 @@ namespace Tours_V5.AuthWindow
 
         private void Accept_Click(object sender, RoutedEventArgs e)
         {
+            // test
             string role = "";
             switch (SelIndex)
             {
