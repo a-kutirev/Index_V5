@@ -130,6 +130,7 @@ namespace WpfControlLibrary.GroupControls
 
             if ((Model.Eventgroupstatus & 1) > 0)
             {
+                if ((bool)Options.HideDeleted) this.Visibility = Visibility.Collapsed;
                 LinearGradientBrush lgb = new LinearGradientBrush();
                 lgb.StartPoint = new Point(0.5, 0);
                 lgb.EndPoint = new Point(0.5, 1);
@@ -156,6 +157,7 @@ namespace WpfControlLibrary.GroupControls
 
             if ((Model.Eventgroupstatus & 4) > 0)
             {
+                if ((bool)Options.HideCompleted) this.Visibility = Visibility.Collapsed;
                 LinearGradientBrush lgb = new LinearGradientBrush();
                 lgb.StartPoint = new Point(0.5, 0);
                 lgb.EndPoint = new Point(0.5, 1);
